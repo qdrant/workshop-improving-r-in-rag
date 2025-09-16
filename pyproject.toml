@@ -1,7 +1,10 @@
 [project]
 name = "workshop-improving-r-in-rag"
 version = "0.1.0"
-description = "Add your description here"
+description = "This workshop focuses on enhancing the Retrieval component in Retrieval Augmented Generation (RAG) systems."
+authors = [
+    { name = "Kacper Łukawski", email = "kacper.lukawski@qdrant.com" }
+]
 requires-python = ">=3.12"
 dependencies = [
     "any-llm-sdk[all]>=0.20.2",
