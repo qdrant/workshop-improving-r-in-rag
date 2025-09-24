@@ -11,6 +11,10 @@ embedding models, hybrid retrieval strategies, and practical optimizations to im
 - **[Docker](https://www.docker.com/)** (optional) - For running Qdrant locally
 - **LLM API access** - Anthropic, OpenAI, or Hugging Face account
 
+> [!TIP]
+> **🎉 Free LLM Access Available!**
+> HuggingFace offers a generous free tier for their Inference API with access to thousands of specialized models across multiple AI tasks. Perfect for experimenting with this workshop without upfront costs!
+
 ## Installation
 
 ### Clone the repository
@@ -63,20 +67,44 @@ Sign up for [Qdrant Cloud](https://cloud.qdrant.io/login) and use the free 1GB c
 
 Create a `.env` file in the `notebooks/` directory with your API credentials:
 
+### Option 1: HuggingFace (Free Tier Recommended) 🆓
+
 ```env
 # LLM provider settings
-LLM_PROVIDER="anthropic"
-ANTHROPIC_API_KEY="your-api-key-here"
+LLM_PROVIDER="huggingface"
+HF_TOKEN="your-huggingface-token"
 
 # Qdrant settings
 QDRANT_URL="http://localhost:6333"
 # QDRANT_API_KEY="your-cloud-api-key" # Only needed for Qdrant Cloud
 ```
 
-**Supported LLM providers:**
+**To get your HuggingFace token:**
+1. Create a free account at [huggingface.co](https://huggingface.co)
+2. Go to [Token Settings](https://huggingface.co/settings/tokens)
+3. Create a new token with "Read" permissions
+4. Copy the token to your `.env` file
+
+### Option 2: Other Providers
+
+```env
+# For Anthropic
+LLM_PROVIDER="anthropic"
+ANTHROPIC_API_KEY="your-api-key-here"
+
+# For OpenAI
+LLM_PROVIDER="openai"
+OPENAI_API_KEY="your-api-key-here"
+
+# Qdrant settings
+QDRANT_URL="http://localhost:6333"
+# QDRANT_API_KEY="your-cloud-api-key" # Only needed for Qdrant Cloud
+```
+
+**All Supported LLM providers:**
+- **🆓 Hugging Face** (Recommended): Generous free tier with thousands of models - Set `LLM_PROVIDER="huggingface"` and `HF_TOKEN`
 - **Anthropic**: Set `LLM_PROVIDER="anthropic"` and `ANTHROPIC_API_KEY`
 - **OpenAI**: Set `LLM_PROVIDER="openai"` and `OPENAI_API_KEY`
-- **Hugging Face**: Set `LLM_PROVIDER="huggingface"` and `HF_TOKEN`
 
 ## Workshop Structure
 
